@@ -4,20 +4,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Controle_De_OS.Models
 {
-    public class Atendente
+    [Table("Cidade")]
+    public class Cidade
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "ID")]
-        public int Idatendente { get; set; }
+        public int Idcidade { get; set; }
 
         [Required(ErrorMessage = "*Campo Obrigatório*")]
-        [StringLength(35,ErrorMessage ="Excedido o limite de caracteres")]
-        [Display(Name = "Nome")]
-        public string nome { get; set; }
+        [StringLength(100, ErrorMessage = "Excedido o limite de caracteres")]
+        [Display(Name = "Cidade")]
+        public string descricao { get; set; }
+
         [Required(ErrorMessage = "*Campo Obrigatório*")]
-        [StringLength(10, ErrorMessage = "Excedido o limite de caracteres")]
-        [Display(Name ="Código Atendente")]
-        public int codigo_atendente { get; set;}
+        [StringLength(2, ErrorMessage = "Excedido o limite de caracteres")]
+        [Display(Name = "UF")]
+        public string estado { get; set; }
     }
 }

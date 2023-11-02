@@ -1,27 +1,27 @@
-﻿@model Controle_De_OS.Models.Atendente
+﻿@model Controle_De_OS.Models.Cidade
 
 @{
-    ViewData["Title"] = "Adicionar Atendente";
+    ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Create</h1>
 
-<h4>Atendente</h4>
+<h4>Cidade</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="nome" class="control-label"></label>
-                <input asp-for="nome" class="form-control" />
-                <span asp-validation-for="nome" class="text-danger"></span>
+                <label asp-for="descricao" class="control-label"></label>
+                <input asp-for="descricao" class="form-control" />
+                <span asp-validation-for="descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="codigo_atendente" class="control-label"></label>
-                <input asp-for="codigo_atendente" class="form-control" />
-                <span asp-validation-for="codigo_atendente" class="text-danger"></span>
+                <label asp-for="estado" class="control-label"></label>
+                <input asp-for="estado" class="form-control" />
+                <span asp-validation-for="estado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

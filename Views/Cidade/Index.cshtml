@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Controle_De_OS.Models.Cidade>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cidade</h1>
+
+<p>
+    <a asp-action="Create">Cadastrar Cidade</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idcidade">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Idcidade">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Idcidade">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

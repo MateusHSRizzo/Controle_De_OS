@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Controle_De_OS.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20231102025046_Initial")]
+    [Migration("20231102151104_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -47,6 +47,29 @@ namespace Controle_De_OS.Migrations
                     b.ToTable("Atendentes");
                 });
 
+            modelBuilder.Entity("Controle_De_OS.Models.Cidade", b =>
+                {
+                    b.Property<int>("Idcidade")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Idcidade"));
+
+                    b.Property<string>("descricao")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("estado")
+                        .IsRequired()
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
+
+                    b.HasKey("Idcidade");
+
+                    b.ToTable("Cidade");
+                });
+
             modelBuilder.Entity("Controle_De_OS.Models.Cliente", b =>
                 {
                     b.Property<int>("Idclientes")
@@ -54,11 +77,6 @@ namespace Controle_De_OS.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Idclientes"));
-
-                    b.Property<string>("cidade")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("documento")
                         .IsRequired()

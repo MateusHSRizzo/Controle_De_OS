@@ -1,7 +1,7 @@
 ﻿@model Controle_De_OS.Models.Cliente
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Excluir Cliente";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -23,12 +23,6 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.endereco)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cidade)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.telefone)

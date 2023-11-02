@@ -7,29 +7,26 @@ namespace Controle_De_OS.Models
     public class Cliente
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "ID")]
         public int Idclientes { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "*Campo Obrigatório*")]
         [StringLength(35, ErrorMessage = "Excedido o limite de caracteres")]
         [Display(Name = "Nome")]
         public string nome { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "*Campo Obrigatório*")]
         [StringLength(50, ErrorMessage = "Excedido o limite de caracteres")]
-        [Display(Name = "Endereço")]
+        [Display(Name = "Rua/Bairro")]
         public string endereco { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Excedido o limite de caracteres")]
-        [Display(Name = "Cidade")]
-        public string cidade { get; set; }
-
-        [Required]
+        [Required(ErrorMessage = "*Campo Obrigatório*")]
         [StringLength(13, ErrorMessage = "Excedido o limite de caracteres")]
         [Display(Name = "Telefone")]
         public char telefone { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "*Campo Obrigatório*")]
         [StringLength(13, ErrorMessage = "Excedido o limite de caracteres")]
         [Display(Name = "Documento")]
         public char documento { get; set; }

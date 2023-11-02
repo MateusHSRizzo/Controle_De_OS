@@ -1,28 +1,28 @@
-﻿@model Controle_De_OS.Models.Tecnico
+﻿@model Controle_De_OS.Models.Cidade
 
 @{
-    ViewData["Title"] = "Editar";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Edit</h1>
 
-<h4>Tecnico</h4>
+<h4>Cidade</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Idtecnico" />
+            <input type="hidden" asp-for="Idcidade" />
             <div class="form-group">
-                <label asp-for="nome" class="control-label"></label>
-                <input asp-for="nome" class="form-control" />
-                <span asp-validation-for="nome" class="text-danger"></span>
+                <label asp-for="descricao" class="control-label"></label>
+                <input asp-for="descricao" class="form-control" />
+                <span asp-validation-for="descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="codigo_indentificador" class="control-label"></label>
-                <input asp-for="codigo_indentificador" class="form-control" />
-                <span asp-validation-for="codigo_indentificador" class="text-danger"></span>
+                <label asp-for="estado" class="control-label"></label>
+                <input asp-for="estado" class="form-control" />
+                <span asp-validation-for="estado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

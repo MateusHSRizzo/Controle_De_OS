@@ -26,6 +26,20 @@ namespace Controle_De_OS.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Cidade",
+                columns: table => new
+                {
+                    Idcidade = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    descricao = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    estado = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cidade", x => x.Idcidade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Cliente",
                 columns: table => new
                 {
@@ -33,7 +47,6 @@ namespace Controle_De_OS.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     nome = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
                     endereco = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    cidade = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     telefone = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     documento = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     email = table.Column<string>(type: "nvarchar(1)", nullable: false),
@@ -82,6 +95,9 @@ namespace Controle_De_OS.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Atendentes");
+
+            migrationBuilder.DropTable(
+                name: "Cidade");
 
             migrationBuilder.DropTable(
                 name: "Cliente");
