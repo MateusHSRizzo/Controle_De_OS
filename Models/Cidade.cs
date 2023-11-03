@@ -10,7 +10,7 @@ namespace Controle_De_OS.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "ID")]
-        public int Idcidade { get; set; }
+        public int Id { get; set;}
 
         [Required(ErrorMessage = "*Campo Obrigatório*")]
         [StringLength(100, ErrorMessage = "Excedido o limite de caracteres")]

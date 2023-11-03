@@ -3,15 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Controle_De_OS.Models
 {
+    [Table ("Procedimento")]
     public class Procedimento
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name = "ID")]
-        public int Idprocedimento { get; set; }
+        public int Id { get; set;}
 
         [Required(ErrorMessage = "*Campo Obrigatório*")]
-        [StringLength(100, ErrorMessage = "Excedido o limite de caracteres")]
         [Display(Name = "Codigo Procedimento")]
         public int codigo_procedimento { get; set; }
 
@@ -33,6 +33,11 @@ namespace Controle_De_OS.Models
         [DataType(DataType.Date)]
         [Display(Name = "Data da solicitação")]
         public DateTime data_solc {get; set; }
-        }
+
+        [Display(Name = "Atendente")]
+        public int Idatendente { get; set; }
+        [ForeignKey("Idatendente")]
+        public Atendente Atendente { get; set; }
+    }
     }
 
